@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Layout from '@/components/layout/Layout';
 import HumanBody from '@/components/simulator/HumanBody';
@@ -5,6 +6,7 @@ import SymptomsPanel from '@/components/simulator/SymptomsPanel';
 import TestResultsPanel from '@/components/simulator/TestResultsPanel';
 import DiagnosisPanel from '@/components/simulator/DiagnosisPanel';
 import SelectedItemsPanel from '@/components/simulator/SelectedItemsPanel';
+import TreatmentPanel from '@/components/simulator/TreatmentPanel';
 import { Activity, Stethoscope, Beaker, Pill } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
