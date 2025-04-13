@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Layout from '@/components/layout/Layout';
 import HumanBody from '@/components/simulator/HumanBody';
@@ -6,8 +5,7 @@ import SymptomsPanel from '@/components/simulator/SymptomsPanel';
 import TestResultsPanel from '@/components/simulator/TestResultsPanel';
 import DiagnosisPanel from '@/components/simulator/DiagnosisPanel';
 import SelectedItemsPanel from '@/components/simulator/SelectedItemsPanel';
-import TreatmentPanel from '@/components/simulator/TreatmentPanel';
-import { Activity, Stethoscope, Flask, Pill } from 'lucide-react';
+import { Activity, Stethoscope, Beaker, Pill } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Simulator = () => {
@@ -35,15 +33,12 @@ const Simulator = () => {
       description: `${symptom.name} has been added to your simulation.`,
     });
     
-    // In a real app, this would trigger a diagnostic API call
-    // For demo purposes, we'll update diagnoses here
     simulateDiagnosisUpdate();
   };
   
   const handleRemoveSymptom = (id: string) => {
     setSymptoms(symptoms.filter(symptom => symptom.id !== id));
     
-    // Update diagnoses when a symptom is removed
     if (symptoms.length <= 1) {
       setDiagnoses([]);
     } else {
@@ -58,7 +53,6 @@ const Simulator = () => {
       description: `${result.testType} result has been added to your simulation.`,
     });
     
-    // Update diagnoses when a test result is added
     simulateDiagnosisUpdate();
   };
   
@@ -68,8 +62,6 @@ const Simulator = () => {
   };
   
   const simulateDiagnosisUpdate = () => {
-    // In a real app, this would be an API call to a diagnostic model
-    // For demo purposes, we'll just trigger a re-render of the diagnosis panel
     setDiagnoses([...diagnoses]);
   };
   
@@ -85,7 +77,6 @@ const Simulator = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Left Column: Body Map & Symptoms */}
             <div className="space-y-8">
               <div className="bg-white rounded-lg shadow-md p-6">
                 <div className="flex items-center space-x-2 mb-4">
@@ -104,11 +95,10 @@ const Simulator = () => {
               />
             </div>
             
-            {/* Middle Column: Test Results & Selected Items */}
             <div className="space-y-8">
               <div className="bg-white rounded-lg shadow-md p-6">
                 <div className="flex items-center space-x-2 mb-4">
-                  <Flask className="h-5 w-5 text-medical-teal" />
+                  <Beaker className="h-5 w-5 text-medical-teal" />
                   <h2 className="text-lg font-medium text-gray-900">Test Results</h2>
                 </div>
                 <TestResultsPanel onAddTestResult={handleAddTestResult} />
@@ -122,7 +112,6 @@ const Simulator = () => {
               />
             </div>
             
-            {/* Right Column: Diagnoses & Treatment */}
             <div className="space-y-8">
               <div className="bg-white rounded-lg shadow-md p-6">
                 <div className="flex items-center space-x-2 mb-4">

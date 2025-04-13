@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, HeartPulse, Brain, Thermometer, Lungs, Stethoscope } from 'lucide-react';
+import { ArrowRight, HeartPulse, Brain, Thermometer, Wind, Stethoscope } from 'lucide-react';
 
 const DemoCases = () => {
   const demoCases = [
@@ -45,7 +45,7 @@ const DemoCases = () => {
       title: 'Shortness of Breath',
       description: 'Female, 60 - Progressive dyspnea and chronic cough',
       category: 'Pulmonology',
-      icon: <Lungs className="h-6 w-6" />,
+      icon: <Wind className="h-6 w-6" />,
       complexity: 'Complex',
     },
     {
