@@ -99,11 +99,11 @@
   }
   
   .body-highlight {
-    @apply transition-all duration-300 cursor-pointer;
+    @apply transition-all duration-300 cursor-pointer stroke-gray-500 stroke-1;
   }
   
   .body-highlight:hover {
-    @apply fill-medical-teal filter drop-shadow-md;
+    @apply fill-medical-teal filter drop-shadow-md stroke-gray-600 stroke-2;
   }
   
   .symptom-icon {
