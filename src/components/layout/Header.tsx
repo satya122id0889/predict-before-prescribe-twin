@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -10,7 +9,7 @@ const Header = () => {
       <div className="medical-container py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Activity className="h-6 w-6 text-medical-teal" />
-          <Link to="/" className="text-xl font-semibold text-gray-900">MediTwin</Link>
+          <Link to="/" className="text-xl font-semibold text-gray-900">IDP-2</Link>
         </div>
         
         <div className="hidden md:flex items-center space-x-6">

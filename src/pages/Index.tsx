@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -76,11 +75,10 @@ const Index = () => {
         <div className="medical-container">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Predict before you prescribe.
+              IDP-2 Project: Digital Twin Simulation
             </h1>
             <p className="text-xl text-gray-600 mb-10">
-              Simulate symptoms, test results, and treatments in a human digital twin.
-              Make data-driven decisions for better patient outcomes.
+              Advanced medical research and simulation platform for precision healthcare.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-medical-teal hover:bg-medical-teal/90 text-white px-8 py-6 text-lg" asChild>

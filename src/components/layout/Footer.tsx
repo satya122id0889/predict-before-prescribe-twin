@@ -11,11 +11,10 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2">
               <Activity className="h-6 w-6 text-medical-teal" />
-              <span className="text-xl font-semibold text-gray-900">MediTwin</span>
+              <span className="text-xl font-semibold text-gray-900">IDP-2</span>
             </div>
             <p className="mt-4 text-gray-600 max-w-md">
-              Advanced patient digital twin technology for healthcare professionals. 
-              Simulate, diagnose, and predict treatment outcomes with precision.
+              IDP-2 Project: Advanced digital twin technology for medical simulation and research.
             </p>
           </div>
           
@@ -63,10 +62,10 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">&copy; 2025 MediTwin. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">&copy; 2025 IDP-2 Project. All rights reserved.</p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
             <p className="text-gray-500 text-sm flex items-center">
-              Made with <Heart className="h-3 w-3 text-red-500 mx-1" /> for healthcare
+              Made with <Heart className="h-3 w-3 text-red-500 mx-1" /> for medical innovation
             </p>
           </div>
         </div>
@@ -76,3 +75,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
