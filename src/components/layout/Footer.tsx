@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="text-xl font-semibold text-gray-900">IDP-2</span>
             </div>
             <p className="mt-4 text-gray-600 max-w-md">
-              IDP-2 Project: Advanced digital twin technology for medical simulation and research.
+              Advanced health visualization and body mapping software for medical professionals
             </p>
           </div>
           
@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/demo-cases" className="text-gray-600 hover:text-medical-teal transition-colors">
-                  Demo Cases
+                  Visualization Cases
                 </Link>
               </li>
             </ul>

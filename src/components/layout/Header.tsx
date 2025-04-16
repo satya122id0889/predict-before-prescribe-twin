@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -17,7 +18,7 @@ const Header = () => {
             About
           </Link>
           <Link to="/demo-cases" className="text-gray-600 hover:text-medical-teal transition-colors">
-            Demo Cases
+            Visualization Cases
           </Link>
           <Link to="/research" className="text-gray-600 hover:text-medical-teal transition-colors">
             Research
@@ -28,7 +29,7 @@ const Header = () => {
               Log In
             </Link>
           </Button>
-          <Button className="bg-medical-teal hover:bg-medical-teal/90">Get Started</Button>
+          <Button className="bg-medical-teal hover:bg-medical-teal/90">Start Visualization</Button>
         </div>
         
         <div className="md:hidden">
@@ -42,3 +43,4 @@ const Header = () => {
 };
 
 export default Header;
+

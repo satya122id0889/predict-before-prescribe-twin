@@ -29,23 +29,23 @@ import { cn } from '@/lib/utils';
 const Index = () => {
   const features = [
     {
-      title: 'Interactive Body Map',
-      description: 'Select body parts to indicate areas of concern and symptoms',
+      title: 'Interactive Body Mapping',
+      description: 'Visualize and track symptoms across different body regions',
       icon: <Activity className="h-10 w-10 text-medical-teal" />,
     },
     {
-      title: 'Comprehensive Testing',
-      description: 'Input lab results and diagnostics to enhance twin accuracy',
+      title: 'Comprehensive Symptom Tracking',
+      description: 'Log and monitor detailed health indicators and symptoms',
       icon: <FlaskConical className="h-10 w-10 text-medical-teal" />,
     },
     {
-      title: 'Advanced Diagnostics',
-      description: 'AI-powered diagnostic suggestions based on symptoms and tests',
+      title: 'Advanced Health Visualization',
+      description: 'Dynamic graphical representation of health signs and symptoms',
       icon: <Stethoscope className="h-10 w-10 text-medical-teal" />,
     },
     {
-      title: 'Treatment Simulation',
-      description: 'Visualize potential treatment outcomes over different timeframes',
+      title: 'Health Trend Analysis',
+      description: 'Visualize symptom progression and health patterns over time',
       icon: <Clock className="h-10 w-10 text-medical-teal" />,
     },
   ];
@@ -75,21 +75,21 @@ const Index = () => {
         <div className="medical-container">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              IDP-2 Project: Digital Twin Simulation
+              IDP-2 Project: Health Visualization Platform
             </h1>
             <p className="text-xl text-gray-600 mb-10">
-              Advanced medical research and simulation platform for precision healthcare.
+              Advanced body mapping and symptom visualization software for healthcare professionals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-medical-teal hover:bg-medical-teal/90 text-white px-8 py-6 text-lg" asChild>
                 <Link to="/simulator">
-                  Start Simulation
+                  Start Visualization
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button variant="outline" className="px-8 py-6 text-lg" asChild>
                 <Link to="/demo-cases">
-                  Try a Demo Case
+                  View Demo Cases
                 </Link>
               </Button>
             </div>
@@ -102,11 +102,11 @@ const Index = () => {
         <div className="medical-container">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              How the Digital Twin Works
+              How the Health Visualization Works
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our advanced medical simulator creates a digital representation of patient physiology
-              to predict responses to different treatments.
+              Our advanced health visualization software creates comprehensive representations 
+              of symptoms, body regions, and health indicators.
             </p>
           </div>
 
