@@ -5,7 +5,7 @@ import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Card, CardContent } from '@/components/ui/card';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { 
   Flame, Zap, Droplets, Clock, Thermometer, Pill, 
   Skull, Wind, HeartPulse, Stethoscope, 
@@ -163,31 +163,31 @@ const SymptomsPanel = ({ bodyPart, onAddSymptom }: SymptomsPanelProps) => {
         {bodyPart ? (
           <>
             <ScrollArea className="h-48 mb-6">
-              <RadioGroup 
-                value={selectedSymptom || ""}
-                onValueChange={setSelectedSymptom}
-                className="grid grid-cols-2 sm:grid-cols-3 gap-3"
-              >
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
                 {bodyPartSymptoms.map((symptom) => (
-                  <label
-                    key={symptom.id}
-                    className={cn(
-                      "flex items-center gap-2 p-3 rounded-md border cursor-pointer transition-all",
-                      selectedSymptom === symptom.id 
-                        ? "bg-medical-light-blue/20 border-medical-teal" 
-                        : "hover:bg-gray-50 border-gray-100"
-                    )}
-                  >
-                    <RadioGroupItem value={symptom.id} id={symptom.id} />
-                    <div className="flex items-center gap-2">
-                      <div className="text-medical-teal">
-                        {symptom.icon}
+                  <Tooltip key={symptom.id}>
+                    <TooltipTrigger asChild>
+                      <div
+                        className={cn(
+                          "symptom-icon flex flex-col items-center justify-center transition-all",
+                          selectedSymptom === symptom.id 
+                            ? "ring-2 ring-medical-teal bg-medical-light-blue/20" 
+                            : "hover:bg-gray-50"
+                        )}
+                        onClick={() => handleSymptomClick(symptom.id)}
+                      >
+                        <div className="text-medical-teal">
+                          {symptom.icon}
+                        </div>
                       </div>
-                      <span className="text-sm font-medium">{symptom.name}</span>
-                    </div>
-                  </label>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <div className="text-sm font-medium">{symptom.name}</div>
+                      <div className="text-xs text-muted-foreground">{symptom.description}</div>
+                    </TooltipContent>
+                  </Tooltip>
                 ))}
-              </RadioGroup>
+              </div>
             </ScrollArea>
             
             {selectedSymptom && (
