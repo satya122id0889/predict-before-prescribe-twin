@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -52,7 +53,7 @@ const Index = () => {
 
   const testimonials = [
     {
-      quote: "This digital twin simulator has transformed how I discuss treatment options with my patients. It's an invaluable tool.",
+      quote: "This health visualization system has transformed how I discuss treatment options with my patients. It's an invaluable tool.",
       author: "Dr. Sarah Chen",
       role: "Cardiologist",
     },
@@ -196,7 +197,7 @@ const Index = () => {
               Trusted by Healthcare Professionals
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              See what doctors and medical educators are saying about our digital twin technology.
+              See what doctors and medical educators are saying about our health visualization technology.
             </p>
           </div>
 
@@ -236,13 +237,13 @@ const Index = () => {
               Ready to transform your diagnostic process?
             </h2>
             <p className="text-xl text-white/90 mb-10">
-              Join thousands of healthcare professionals already using our digital twin simulator
+              Join thousands of healthcare professionals already using our health visualization platform
               to improve patient outcomes and treatment accuracy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white text-medical-teal hover:bg-white/90 px-8 py-6 text-lg" asChild>
                 <Link to="/simulator">
-                  Start Your Simulation
+                  Start Your Visualization
                 </Link>
               </Button>
               <Button variant="outline" className="text-white border-white hover:bg-white/10 px-8 py-6 text-lg" asChild>
@@ -260,7 +261,7 @@ const Index = () => {
         <div className="medical-container">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Choose MediTwin?
+              Why Choose IDP-2?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Our platform offers unique benefits for healthcare professionals.

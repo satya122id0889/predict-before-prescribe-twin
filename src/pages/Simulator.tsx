@@ -32,7 +32,7 @@ const Simulator = () => {
     setSymptoms([...symptoms, symptom]);
     toast({
       title: "Symptom added",
-      description: `${symptom.name} has been added to your simulation.`,
+      description: `${symptom.name} has been added to your visualization.`,
     });
     
     simulateDiagnosisUpdate();
@@ -52,7 +52,7 @@ const Simulator = () => {
     setTestResults([...testResults, result]);
     toast({
       title: "Test result added",
-      description: `${result.testType} result has been added to your simulation.`,
+      description: `${result.testType} result has been added to your visualization.`,
     });
     
     simulateDiagnosisUpdate();
@@ -72,9 +72,9 @@ const Simulator = () => {
       <div className="bg-medical-soft-gray py-10">
         <div className="medical-container">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">Medical Digital Twin Simulator</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Health Visualization Platform</h1>
             <p className="mt-2 text-gray-600">
-              Build a digital twin by selecting body parts, adding symptoms, and inputting test results
+              Create a comprehensive body map by selecting body parts, adding symptoms, and inputting test results
             </p>
           </div>
           

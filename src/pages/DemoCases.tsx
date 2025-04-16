@@ -86,7 +86,7 @@ const DemoCases = () => {
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Demo Patient Cases</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore our pre-configured patient cases to test the digital twin simulator's capabilities.
+              Explore our pre-configured patient cases to test the health visualization platform's capabilities.
               Perfect for training, education, or getting familiar with the system.
             </p>
           </div>
@@ -112,7 +112,7 @@ const DemoCases = () => {
                 <CardFooter>
                   <Button className="w-full bg-medical-teal hover:bg-medical-teal/90" asChild>
                     <Link to={`/simulator?case=${demoCase.id}`}>
-                      Simulate Case
+                      Visualize Case
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -123,11 +123,11 @@ const DemoCases = () => {
 
           <div className="mt-16 text-center">
             <p className="text-gray-600 mb-6">
-              Want to create your own patient simulation from scratch?
+              Want to create your own health visualization from scratch?
             </p>
             <Button className="bg-medical-teal hover:bg-medical-teal/90" asChild>
               <Link to="/simulator">
-                Start New Simulation
+                Start New Visualization
               </Link>
             </Button>
           </div>
