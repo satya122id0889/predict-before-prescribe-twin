@@ -1,13 +1,12 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
 import { 
   Flame, Zap, Droplets, Clock, Thermometer, Pill, 
-  Skull, Dizzy, Wind, HeartPulse, Stethoscope, 
-  Lung, Utensils, Trash, Activity, AlertTriangle,
-  Grab, Eye, LucideIcon
+  Skull, Wind, HeartPulse, Stethoscope, 
+  Utensils, Trash, Activity, AlertTriangle,
+  Grab, Eye, RefreshCcw
 } from 'lucide-react';
 
 interface Symptom {
@@ -30,7 +29,7 @@ const SymptomsPanel = ({ bodyPart, onAddSymptom }: SymptomsPanelProps) => {
   const symptoms: Record<string, Symptom[]> = {
     'Head': [
       { id: 'headache', name: 'Headache', icon: <Zap size={24} />, description: 'Pain in the head region' },
-      { id: 'dizziness', name: 'Dizziness', icon: <Dizzy size={24} />, description: 'Feeling lightheaded or unsteady' },
+      { id: 'dizziness', name: 'Dizziness', icon: <RefreshCcw size={24} />, description: 'Feeling lightheaded or unsteady' },
       { id: 'fever', name: 'Fever', icon: <Thermometer size={24} />, description: 'Elevated body temperature' },
       { id: 'migraine', name: 'Migraine', icon: <Skull size={24} />, description: 'Severe throbbing pain, usually on one side of the head' },
       { id: 'blurred-vision', name: 'Blurred Vision', icon: <Eye size={24} />, description: 'Lack of sharpness of vision' },
@@ -109,7 +108,6 @@ const SymptomsPanel = ({ bodyPart, onAddSymptom }: SymptomsPanelProps) => {
     ],
   };
   
-  // Default symptoms if none are defined for the selected body part
   const defaultSymptoms: Symptom[] = [
     { id: 'pain', name: 'Pain', icon: <Zap size={24} />, description: 'General pain or discomfort' },
     { id: 'burning', name: 'Burning', icon: <Flame size={24} />, description: 'Burning sensation' },
@@ -139,7 +137,6 @@ const SymptomsPanel = ({ bodyPart, onAddSymptom }: SymptomsPanelProps) => {
       duration,
     });
     
-    // Reset selection
     setSelectedSymptom(null);
     setIntensity(5);
     setDuration(1);
