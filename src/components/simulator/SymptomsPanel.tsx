@@ -1,7 +1,11 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Card, CardContent } from '@/components/ui/card';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { 
   Flame, Zap, Droplets, Clock, Thermometer, Pill, 
   Skull, Wind, HeartPulse, Stethoscope, 
@@ -150,77 +154,87 @@ const SymptomsPanel = ({ bodyPart, onAddSymptom }: SymptomsPanelProps) => {
   };
   
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-medium text-gray-900 mb-4">
-        {bodyPart ? `Symptoms for ${bodyPart}` : 'Select a body part first'}
-      </h3>
-      
-      {bodyPart ? (
-        <>
-          <div className="grid grid-cols-3 gap-4 mb-6 max-h-60 overflow-y-auto">
-            {(symptoms[bodyPart] || defaultSymptoms).map((symptom) => (
-              <div
-                key={symptom.id}
-                className={cn(
-                  "symptom-icon flex flex-col items-center",
-                  selectedSymptom === symptom.id && "ring-2 ring-medical-teal"
-                )}
-                onClick={() => handleSymptomClick(symptom.id)}
+    <Card className="shadow-sm border-0">
+      <CardContent className="p-6">
+        <h3 className="text-lg font-medium text-gray-900 mb-4">
+          {bodyPart ? `Symptoms for ${bodyPart}` : 'Select a body part first'}
+        </h3>
+        
+        {bodyPart ? (
+          <>
+            <ScrollArea className="h-48 mb-6">
+              <RadioGroup 
+                value={selectedSymptom || ""}
+                onValueChange={setSelectedSymptom}
+                className="grid grid-cols-2 sm:grid-cols-3 gap-3"
               >
-                <div className="bg-medical-light-blue p-3 rounded-full">
-                  {symptom.icon}
+                {bodyPartSymptoms.map((symptom) => (
+                  <label
+                    key={symptom.id}
+                    className={cn(
+                      "flex items-center gap-2 p-3 rounded-md border cursor-pointer transition-all",
+                      selectedSymptom === symptom.id 
+                        ? "bg-medical-light-blue/20 border-medical-teal" 
+                        : "hover:bg-gray-50 border-gray-100"
+                    )}
+                  >
+                    <RadioGroupItem value={symptom.id} id={symptom.id} />
+                    <div className="flex items-center gap-2">
+                      <div className="text-medical-teal">
+                        {symptom.icon}
+                      </div>
+                      <span className="text-sm font-medium">{symptom.name}</span>
+                    </div>
+                  </label>
+                ))}
+              </RadioGroup>
+            </ScrollArea>
+            
+            {selectedSymptom && (
+              <div className="space-y-5 animate-fade-in">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Intensity: {intensity}/10
+                  </label>
+                  <Slider
+                    value={[intensity]}
+                    min={1}
+                    max={10}
+                    step={1}
+                    onValueChange={(values) => setIntensity(values[0])}
+                  />
                 </div>
-                <span className="mt-2 text-xs font-medium text-gray-700">{symptom.name}</span>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Duration: {getDurationLabel(duration)}
+                  </label>
+                  <Slider
+                    value={[duration]}
+                    min={1}
+                    max={30}
+                    step={1}
+                    onValueChange={(values) => setDuration(values[0])}
+                  />
+                </div>
+                
+                <Button 
+                  className="w-full bg-medical-teal hover:bg-medical-teal/90"
+                  onClick={handleAddSymptom}
+                >
+                  <Pill className="mr-2 h-4 w-4" />
+                  Add Symptom
+                </Button>
               </div>
-            ))}
+            )}
+          </>
+        ) : (
+          <div className="flex items-center justify-center h-40 bg-gray-50 rounded-lg border border-dashed border-gray-200">
+            <p className="text-gray-500">Please select a body part first</p>
           </div>
-          
-          {selectedSymptom && (
-            <div className="space-y-6 animate-fade-in">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Intensity: {intensity}/10
-                </label>
-                <Slider
-                  value={[intensity]}
-                  min={1}
-                  max={10}
-                  step={1}
-                  onValueChange={(values) => setIntensity(values[0])}
-                  className="py-4"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Duration: {getDurationLabel(duration)}
-                </label>
-                <Slider
-                  value={[duration]}
-                  min={1}
-                  max={30}
-                  step={1}
-                  onValueChange={(values) => setDuration(values[0])}
-                  className="py-4"
-                />
-              </div>
-              
-              <Button 
-                className="w-full bg-medical-teal hover:bg-medical-teal/90"
-                onClick={handleAddSymptom}
-              >
-                <Pill className="mr-2 h-4 w-4" />
-                Add Symptom
-              </Button>
-            </div>
-          )}
-        </>
-      ) : (
-        <div className="flex items-center justify-center h-40 bg-gray-50 rounded-lg border border-dashed border-gray-300">
-          <p className="text-gray-500">Please select a body part first</p>
-        </div>
-      )}
-    </div>
+        )}
+      </CardContent>
+    </Card>
   );
 };
 
